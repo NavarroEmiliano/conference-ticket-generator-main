@@ -28,11 +28,11 @@ const Form = () => {
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="email">Email Address</label>
-          <input type="email" id="email"/>
+          <input type="email" id="email" placeholder="example@gmail.com"/>
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="github">GitHub Username</label>
-          <input type="text" id="github"/>
+          <input type="text" id="github" placeholder="@yourusername"/>
         </div>
         <button type="submit">Generate My Ticket</button>
       </form>

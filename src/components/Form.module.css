@@ -1,13 +1,14 @@
 :root {
     --Neutral-300: hsl(252, 6%, 83%);
-    --Neutral-500: hsl(245, 15%, 58%);
+    --Neutral-500: hsl(246, 15%, 58%);
     --Neutral-700: hsl(245, 19%, 35%);
     --Neutral-900: hsl(248, 70%, 10%);
     --Orange-500: hsl(7, 88%, 67%);
+    --Orange-700: hsl(7, 71%, 60%);
 }
 
 .container {
-    margin: 40px auto;
+    margin: 16px auto;
     width: 640px;
     display: flex;
     align-items: center;
@@ -18,10 +19,10 @@ h2 {
     font-size: 42px;
     font-weight: 700;
     text-align: center;
-    margin: 10px;
+    margin: 6px;
 }
 
-.container > p {
+.container>p {
     text-align: center;
     margin: 10px;
     font-weight: 400;
@@ -32,25 +33,28 @@ h2 {
 .form {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    padding: 24px;
+    width: 390px;
+    gap: 10px;
 }
 
 .fileLabel {
-    font-size: 20px;
+    font-size: 15px;
+    color: var(--Neutral-300);
 }
 
 .fileBox {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
-    padding: 20px;
-    gap: 20px;
     width: 100%;
-    background-color: var(--Neutral-900);
+    background-color: rgb(255, 255, 255, .1);
     position: relative;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23D2D1D6FF' stroke-width='2' stroke-dasharray='3%2c 8' stroke-dashoffset='7' stroke-linecap='square'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%234B486AFF' stroke-width='2' stroke-dasharray='3%2c 7' stroke-dashoffset='9' stroke-linecap='square'/%3e%3c/svg%3e");
     border-radius: 10px;
+    gap: 10px;
+    padding: 14px;
 }
 
 .fileBox input {
@@ -62,51 +66,84 @@ h2 {
 }
 
 .fileBox p {
-    letter-spacing: 0.3px;
-    font-size: 14px;
+    font-size: 13px;
+    color: var(--Neutral-300);
 }
 
 .iconContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 5px;
     border-radius: 10px;
-    border: 1px solid var(--Neutral-300);
-    background-color: var(--Neutral-900);
+    background-color: rgb(255, 255, 255, .1);
+    border: 1px solid var(--Neutral-700);
 }
 
 .iconContainer .icon {
-    width: 28px;
+    width: 22px;
 }
 
 .infoBox {
     display: flex;
     align-items: center;
     gap: 4px;
+    color: var(--Neutral-500);
 }
 
 .infoBox p {
-    font-size: 12px;
-    word-spacing: 2px;
+    font-size: 10px;
+}
+
+.inputBox {
+    padding: 5px 0;
 }
 
 .inputBox label {
     display: block;
-
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--Neutral-300);
 }
 
 .inputBox input {
     width: 100%;
-    height: 50px;
+    height: 34px;
     border-radius: 10px;
     background-color: rgb(255, 255, 255, .1);
-    border: 2px solid var(--Neutral-500);
+    border: 1px solid var(--Neutral-500);
+    padding: 0 10px;
+    color: #fff;
+    font-size: 16px;
+    caret-color: #fff;
 }
 
+.inputBox input:-webkit-autofill,
+.inputBox input:-webkit-autofill:hover,
+.inputBox input:-webkit-autofill:focus,
+.inputBox input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px rgb(255, 255, 255, .1);
+}
+
+in .inputBox input:focus {
+    outline: 2px solid var(--Neutral-500);
+}
+
+
 form button {
-    height: 50px;
+    height: 40px;
     border-radius: 10px;
     background-color: var(--Orange-500);
-    color: black;
+    color: rgb(1, 1, 49);
+    margin: 5px 0;
+    border: 1px solid var(--Neutral-500);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: var(--Orange-700);
 }
