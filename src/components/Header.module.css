@@ -4,10 +4,12 @@ header {
     border: 2px solid white;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    padding: 16px;
 }
 
 header h4 {
     color: white;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 20px;
 }

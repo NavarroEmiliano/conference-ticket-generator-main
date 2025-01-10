@@ -1,0 +1,84 @@
+:root {
+    --Neutral-300: hsl(252, 6%, 83%);
+    --Neutral-500: hsl(245, 15%, 58%);
+    --Neutral-700: hsl(245, 19%, 35%);
+    --Neutral-900: hsl(248, 70%, 10%);
+}
+
+.container {
+    margin: 40px auto;
+    width: 640px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+}
+
+h2 {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    font-stretch: ultra-expanded;
+    word-spacing: 4px;
+    margin: 10px;
+}
+
+.container > p {
+    text-align: center;
+    margin: 10px;
+    word-spacing: 2px;
+    font-weight: 400;
+    color: var(--Neutral-300);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.fileLabel {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.fileBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    border: 1px dashed var(--Neutral-500);
+    border-radius: 10px;
+    background-color: var(--Neutral-900);
+    position: relative;
+}
+
+.fileBox input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 10px;
+}
+
+.fileBox p {
+    letter-spacing: 0.3px;
+    font-size: 14px;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--Neutral-300);
+    background-color: var(--Neutral-900);
+}
+
+.iconContainer .icon {
+    width: 28px;
+}

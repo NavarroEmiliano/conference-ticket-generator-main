@@ -1,7 +1,12 @@
+:root {
+    --Neutral-0: hsl(0, 0%, 100%);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--Neutral-0);
 }
 
 @font-face {
