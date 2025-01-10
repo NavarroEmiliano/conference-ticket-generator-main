@@ -1,5 +1,6 @@
 import styles from "./Form.module.css";
 import uploadIcon from "../assets/images/icon-upload.svg";
+import infoIcon from "../assets/images/icon-info.svg";
 
 const Form = () => {
   return (
@@ -7,7 +8,9 @@ const Form = () => {
       <h2>Your Journey to Coding Conf 2025 Starts Here!</h2>
       <p>Secure your spot at next year's biggest coding conference.</p>
       <form className={styles.form}>
-        <label className={styles.fileLabel} htmlFor="file">Upload Avatar</label>
+        <label className={styles.fileLabel} htmlFor="file">
+          Upload Avatar
+        </label>
         <div className={styles.fileBox}>
           <input type="file" name="file" id="file" />
           <div className={styles.iconContainer}>
@@ -15,6 +18,23 @@ const Form = () => {
           </div>
           <p>Drag and drop or click to upload</p>
         </div>
+        <div className={styles.infoBox}>
+          <img src={infoIcon} alt="Icon info" />
+          <p>Upload your photo (JP or PNG, max size: 500kb)</p>.
+        </div>
+        <div className={styles.inputBox}>
+          <label htmlFor="name">Full Name</label>
+          <input type="text" id="name"/>
+        </div>
+        <div className={styles.inputBox}>
+          <label htmlFor="email">Email Address</label>
+          <input type="email" id="email"/>
+        </div>
+        <div className={styles.inputBox}>
+          <label htmlFor="github">GitHub Username</label>
+          <input type="text" id="github"/>
+        </div>
+        <button type="submit">Generate My Ticket</button>
       </form>
     </div>
   );
