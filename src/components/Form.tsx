@@ -32,6 +32,9 @@ const Form = ({
 
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if(!user.fullName) {
+      console.log('No papi, estas completamente confundido')
+    }
   };
 
   return (

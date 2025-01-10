@@ -13,8 +13,6 @@ export interface User {
 function App() {
   const [user, setUser] = useState<User>({});
 
-  console.log(user);
-
   return (
     <>
       <Header />
