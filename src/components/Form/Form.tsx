@@ -44,26 +44,31 @@ const Form = ({
         <p>Secure your spot at next year's biggest coding conference.</p>
       </div>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.fileLabel} htmlFor="file">
-          Upload Avatar
-        </label>
-        <div className={styles.fileBox}>
-          <input
-            onChange={handleChange}
-            type="file"
-            name="file"
-            id="file"
-            accept="image/jpg, image/png"
-          />
-          <div className={styles.iconContainer}>
-            <img className={styles.icon} src={uploadIcon} alt="Upload Icon" />
+        <div className={styles.fileContainer}>
+          <label className={styles.fileLabel} htmlFor="file">
+            Upload Avatar
+          </label>
+
+          <div className={styles.fileBox}>
+            <input
+              onChange={handleChange}
+              type="file"
+              name="file"
+              id="file"
+              accept="image/jpg, image/png"
+            />
+
+            <div className={styles.iconContainer}>
+              <img className={styles.icon} src={uploadIcon} alt="Upload Icon" />
+            </div>
+            <p>Drag and drop or click to upload</p>
           </div>
-          <p>Drag and drop or click to upload</p>
+          <div className={styles.infoBox}>
+            <img src={infoIcon} alt="Icon info" />
+            <p>Upload your photo (JPG or PNG, max size: 500kb)</p>.
+          </div>
         </div>
-        <div className={styles.infoBox}>
-          <img src={infoIcon} alt="Icon info" />
-          <p>Upload your photo (JPG or PNG, max size: 500kb)</p>.
-        </div>
+
         <div className={styles.inputBox}>
           <label htmlFor="username">Full Name</label>
           <input
