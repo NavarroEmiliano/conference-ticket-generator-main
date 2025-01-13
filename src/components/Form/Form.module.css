@@ -44,8 +44,8 @@
 .form {
     display: flex;
     flex-direction: column;
-    height: 610;
     width: 460px;
+    gap: 24px;
 }
 
 .form label {
@@ -83,7 +83,7 @@
     top: 0;
 }
 
-.iconContainer {
+.cloudIconContainer {
     display: grid;
     place-items: center;
     width: 50px;
@@ -98,30 +98,37 @@
     width: 30px;
 }
 
-
-
 .fileBox p {
     font-size: 18px;
     color: var(--Neutral-300);
 }
 
-/*
-
 
 .infoBox {
     display: flex;
     align-items: center;
-    gap: 4px;
-    color: var(--Neutral-500);
+    height: 16px;
+    gap: 8px;
+}
+
+.infoIcon {
+    padding: 0;
+    color: var(--Neutral-300);
 }
 
 .infoBox p {
-    font-size: 10px;
+    font-size: 12px;
+    line-height: 120%;
+    letter-spacing: -0.2px;
+    color: var(--Neutral-300);
 }
 
+/*
 .inputBox {
     padding: 5px 0;
 }
+
+
 
 .inputBox label {
     display: block;

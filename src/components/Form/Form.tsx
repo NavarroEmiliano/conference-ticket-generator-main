@@ -3,6 +3,7 @@ import uploadIcon from "../../assets/images/icon-upload.svg";
 import infoIcon from "../../assets/images/icon-info.svg";
 import { ChangeEvent, useState } from "react";
 import { User } from "../../App";
+import InfoIcon from "../Icons/InfoIcon";
 
 const Form = ({
   setUser,
@@ -58,14 +59,14 @@ const Form = ({
               accept="image/jpg, image/png"
             />
 
-            <div className={styles.iconContainer}>
+            <div className={styles.cloudIconContainer}>
               <img className={styles.icon} src={uploadIcon} alt="Upload Icon" />
             </div>
             <p>Drag and drop or click to upload</p>
           </div>
           <div className={styles.infoBox}>
-            <img src={infoIcon} alt="Icon info" />
-            <p>Upload your photo (JPG or PNG, max size: 500kb)</p>.
+            <InfoIcon className={styles.infoIcon} height={16} width={16}/>
+            <p>Upload your photo (JPG or PNG, max size: 500kb).</p>
           </div>
         </div>
 
