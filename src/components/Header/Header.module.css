@@ -21,8 +21,7 @@ header {
     height: 30px;
 }
 
-header h4 {
-    color: white;
+.headerContent h4 {
     font-weight: 700;
     font-size: 24px;
 }

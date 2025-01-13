@@ -1,6 +1,6 @@
 import styles from "./Form.module.css";
-import uploadIcon from "../assets/images/icon-upload.svg";
-import infoIcon from "../assets/images/icon-info.svg";
+import uploadIcon from "../../assets/images/icon-upload.svg";
+import infoIcon from "../../assets/images/icon-info.svg";
 import { ChangeEvent, useState } from "react";
 import { User } from "../../App";
 
@@ -11,7 +11,7 @@ const Form = ({
   setUser: React.Dispatch<React.SetStateAction<User>>;
   user: User;
 }) => {
-/*   const [errorMessage, setErrorMessage] = useState<string | null>(null); */
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, files, type } = e.target;
@@ -32,15 +32,17 @@ const Form = ({
 
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(!user.fullName) {
-      console.log('No papi, estas completamente confundido')
+    if (!user.fullName) {
+      console.log("No papi, estas completamente confundido");
     }
   };
 
   return (
     <div className={styles.container}>
-      <h2>Your Journey to Coding Conf 2025 Starts Here!</h2>
-      <p>Secure your spot at next year's biggest coding conference.</p>
+      <div className={styles.formHeader}>
+        <h2>Your Journey to Coding Conf 2025 Starts Here!</h2>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </div>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.fileLabel} htmlFor="file">
           Upload Avatar
