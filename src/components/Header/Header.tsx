@@ -1,5 +1,5 @@
 import "./Header.module.css";
-import logoMark from "../assets/images/logo-mark.svg";
+import logoMark from "../../assets/images/logo-mark.svg";
 
 const Header = () => {
   return (

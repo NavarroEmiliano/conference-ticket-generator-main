@@ -2,7 +2,7 @@ import styles from "./Form.module.css";
 import uploadIcon from "../assets/images/icon-upload.svg";
 import infoIcon from "../assets/images/icon-info.svg";
 import { ChangeEvent, useState } from "react";
-import { User } from "../App";
+import { User } from "../../App";
 
 const Form = ({
   setUser,
@@ -11,7 +11,7 @@ const Form = ({
   setUser: React.Dispatch<React.SetStateAction<User>>;
   user: User;
 }) => {
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+/*   const [errorMessage, setErrorMessage] = useState<string | null>(null); */
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, files, type } = e.target;

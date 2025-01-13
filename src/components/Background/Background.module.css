@@ -1,0 +1,29 @@
+.bgContainer {
+    background-image: url("./../../assets/images/background-desktop.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.bgContainer img {
+    position: absolute;
+}
+
+.bgContainer img:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bgContainer img:nth-child(2) {
+    top: -85px;
+    left: 44px;
+}
+
+.bgContainer img:nth-child(3) {
+    top: 334px;
+    right: 10%;
+}

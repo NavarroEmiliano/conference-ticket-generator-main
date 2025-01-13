@@ -1,7 +1,8 @@
-import { useState } from "react";
+/* import { useState } from "react"; */
 import "./App.css";
-import Form from "./components/Form";
-import Header from "./components/Header";
+/* import Form from "./components/Form/Form"; */
+import Header from "./components/Header/Header";
+import Background from "./components/Background/Background";
 
 export interface User {
   userImg?: File | null;
@@ -11,12 +12,13 @@ export interface User {
 }
 
 function App() {
-  const [user, setUser] = useState<User>({});
+  /*   const [user, setUser] = useState<User>({}); */
 
   return (
     <>
-      <Header />
-      <Form user={user} setUser={setUser} />
+      <Background />
+      {/* <Header /> */}
+      {/* <Form user={user} setUser={setUser} /> */}
     </>
   );
 }
