@@ -1,11 +1,13 @@
-import "./Header.module.css";
+import styles from "./Header.module.css";
 import logoMark from "../../assets/images/logo-mark.svg";
 
 const Header = () => {
   return (
     <header>
-      <img src={logoMark} alt="" />
-      <h4>Coding Conf</h4>
+      <div className={styles.headerContent}>
+        <img src={logoMark} alt="coding conf title" />
+        <h4>Coding Conf</h4>
+      </div>
     </header>
   );
 };

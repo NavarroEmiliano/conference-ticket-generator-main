@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Background />
-      {/* <Header /> */}
+      <Header />
       {/* <Form user={user} setUser={setUser} /> */}
     </>
   );
