@@ -6,8 +6,9 @@ import Background from "./components/Background/Background";
 
 export interface User {
   userImg?: File | null;
-  fullName?: string;
+  username?: string;
   email?: string;
+  github?: string;
   [key: string]: string | File | null | undefined;
 }
 

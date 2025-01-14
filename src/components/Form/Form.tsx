@@ -4,10 +4,11 @@ import { ChangeEvent, useState } from "react";
 import { User } from "../../App";
 import InfoIcon from "../Icons/InfoIcon";
 
-interface Error {
-  username: string | null;
-  email: string | null;
-  github: string | null;
+interface ErrorMessage {
+  username?: string;
+  email?: string;
+  github?: string;
+  userImg?: string;
 }
 
 const Form = ({
@@ -17,7 +18,7 @@ const Form = ({
   setUser: React.Dispatch<React.SetStateAction<User>>;
   user: User;
 }) => {
-  const [errorMessage, setErrorMessage] = useState<Error | null>(null);
+  const [errorMessage, setErrorMessage] = useState<ErrorMessage | null>(null);
   const [imageSrc, setImageSrc] = useState<string | undefined>(undefined);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -35,18 +36,59 @@ const Form = ({
         [name]: value,
       };
     });
-    if (type === "file" && files && files[0].size < 5000) {
-      const imageUrl = URL.createObjectURL(files[0]);
-      setImageSrc(imageUrl);
-      return;
+
+    if (type === "file") {
+      if (files && files[0].size < 5000) {
+        const imageUrl = URL.createObjectURL(files[0]);
+        setImageSrc(imageUrl);
+        setErrorMessage((prev: ErrorMessage | null) => ({
+          ...prev,
+          userImg: '',
+        }));
+        return;
+      } else {
+        setErrorMessage((prev: ErrorMessage | null) => ({
+          ...prev,
+          userImg: "File too large. Please upload a photo under 5MB.",
+        }));
+        setImageSrc(undefined);
+      }
     }
-    setImageSrc(undefined);
   };
 
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!user.fullName) {
-      console.log("No papi, estas completamente confundido");
+    if (!user.username) {
+      setErrorMessage((prev: ErrorMessage | null) => ({
+        ...prev,
+        username: "This field cannot be empty",
+      }));
+    }
+
+    if (!user.email) {
+      setErrorMessage((prev: ErrorMessage | null) => ({
+        ...prev,
+        email: "This field cannot be empty",
+      }));
+    }
+
+    if (!user.github) {
+      setErrorMessage((prev: ErrorMessage | null) => ({
+        ...prev,
+
+        github: "This field cannot be empty",
+      }));
+    }
+
+    if (!imageSrc) {
+      setErrorMessage((prev: ErrorMessage | null) => ({
+        ...prev,
+        userImg: "This field cannot be empty",
+      }));
+    }
+
+    if(user.email && user.username && user.github && imageSrc) {
+      setErrorMessage(null)
     }
   };
 
@@ -59,6 +101,7 @@ const Form = ({
     });
     setImageSrc(undefined);
   };
+
 
   return (
     <div className={styles.container}>
@@ -132,16 +175,14 @@ const Form = ({
             )}
           </div>
           <div className={styles.infoBox}>
-            {user?.userImg && user.userImg.size > 5000 ? (
+            {errorMessage?.userImg || (user?.userImg && user.userImg.size > 5000) ? (
               <>
                 <InfoIcon
                   className={styles.infoIconError}
                   height={16}
                   width={16}
                 />
-                <p className={styles.errorMessage}>
-                  File too large. Please upload a photo under 5MB.
-                </p>
+                <p className={styles.errorMessage}>{errorMessage?.userImg}</p>
               </>
             ) : (
               <>
@@ -159,11 +200,18 @@ const Form = ({
             type="text"
             id="username"
             name="username"
-            required
           />
           <div className={styles.infoBox}>
-            <InfoIcon className={styles.infoIcon} height={16} width={16} />
-            <p>Buenas</p>
+            {errorMessage?.username && (
+              <>
+                <InfoIcon
+                  className={styles.infoIconError}
+                  height={16}
+                  width={16}
+                />
+                <p className={styles.errorMessage}>{errorMessage.username}</p>
+              </>
+            )}
           </div>
         </div>
         <div className={styles.inputBox}>
@@ -174,11 +222,18 @@ const Form = ({
             id="email"
             name="email"
             placeholder="example@gmail.com"
-            required
           />
           <div className={styles.infoBox}>
-            <InfoIcon className={styles.infoIcon} height={16} width={16} />
-            <p>Buenas</p>
+            {errorMessage?.email && (
+              <>
+                <InfoIcon
+                  className={styles.infoIconError}
+                  height={16}
+                  width={16}
+                />
+                <p className={styles.errorMessage}>{errorMessage.email}</p>
+              </>
+            )}
           </div>
         </div>
         <div className={styles.inputBox}>
@@ -189,11 +244,18 @@ const Form = ({
             id="github"
             name="github"
             placeholder="@yourusername"
-            required
           />
           <div className={styles.infoBox}>
-            <InfoIcon className={styles.infoIcon} height={16} width={16} />
-            <p>Buenas</p>
+            {errorMessage?.username && (
+              <>
+                <InfoIcon
+                  className={styles.infoIconError}
+                  height={16}
+                  width={16}
+                />
+                <p className={styles.errorMessage}>{errorMessage.username}</p>
+              </>
+            )}
           </div>
         </div>
         <button className={styles.submitBtn} type="submit">
