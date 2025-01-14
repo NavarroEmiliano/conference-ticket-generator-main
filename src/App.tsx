@@ -5,15 +5,18 @@ import Header from "./components/Header/Header";
 import Background from "./components/Background/Background";
 
 export interface User {
-  userImg?: File | null;
+  userImg?: File  | null;
   username?: string;
   email?: string;
   github?: string;
+  imgUrl?: string;
   [key: string]: string | File | null | undefined;
 }
 
 function App() {
     const [user, setUser] = useState<User>({});
+
+    console.log(user)
 
   return (
     <>

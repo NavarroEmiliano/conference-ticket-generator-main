@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     width: 308px;
-    gap: 16px;
+    gap: 12px;
 }
 
 .form label {

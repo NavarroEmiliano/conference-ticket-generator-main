@@ -89,6 +89,10 @@ const Form = ({
 
     if(user.email && user.username && user.github && imageSrc) {
       setErrorMessage(null)
+      setUser((prev:User) => ({
+        ...prev,
+        imgUrl: imageSrc
+      }))
     }
   };
 
