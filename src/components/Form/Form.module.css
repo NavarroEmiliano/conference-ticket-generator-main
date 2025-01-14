@@ -1,10 +1,11 @@
 :root {
     --Neutral-300: #d1d0d5;
     --Neutral-500: #8784A5;
-    --Neutral-700: hsl(245, 19%, 35%);
-    --Neutral-900: hsl(248, 70%, 10%);
-    --Orange-500: hsl(7, 88%, 67%);
-    --Orange-700: hsl(7, 71%, 60%);
+    --Neutral-700: #4B4869;
+    --Neutral-900: #0D082D;
+    --Orange-500: #F57463;
+    --Orange-700: #E1604F;
+
 }
 
 .container {
@@ -19,21 +20,22 @@
 }
 
 .formHeader {
-    min-height: 148px;
-    max-width: 729px;
-    margin-bottom: 32px;
+    min-height: 121px;
+    max-width: 596px;
+    margin-bottom: 20px;
 }
 
 .formHeader h2 {
-    font-size: 49px;
-    letter-spacing: -1px;
+    font: var(--text-preset1);
+    font-size: 40px;
     text-align: center;
     font-weight: 900;
-    margin-bottom: 16px;
+    margin-bottom: 13px;
+    /* Rescaled */
 }
 
 .formHeader p {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 120%;
     letter-spacing: -0.5px;
     text-align: center;
@@ -44,34 +46,35 @@
 .form {
     display: flex;
     flex-direction: column;
-    width: 460px;
-    gap: 24px;
+    width: 308px;
+    height: 408;
+    gap: 16px;
 }
 
 .form label {
-    font-size: 20px;
+    font-size: 13px;
 }
 
 .fileContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 190px;
-    gap: 12px;
+    height: 127px;
+    gap: 8px;
 }
 
 .fileBox {
     display: flex;
     position: relative;
-    min-height: 126px;
+    min-height: 84px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 16px 12px;
+    padding: 11px 8px;
     background-color: rgb(255, 255, 255, 0.08);
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%238784A5FF' stroke-width='2' stroke-dasharray='5%2c 8' stroke-dashoffset='31' stroke-linecap='square'/%3e%3c/svg%3e");
-    border-radius: 12px;
-    gap: 16px;
+    border-radius: 8px;
+    gap: 11px;
     backdrop-filter: blur(4px);
 }
 
@@ -87,20 +90,20 @@
 .cloudIconContainer {
     display: grid;
     place-items: center;
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-    border-radius: 10px;
+    width: 34px;
+    height: 34px;
+    padding: 3px;
+    border-radius: 7px;
     background-color: rgb(255, 255, 255, .1);
     border: 1px solid var(--Neutral-500);
 }
 
-.iconContainer .icon {
-    width: 30px;
+.cloudIconContainer .icon {
+    width: 20px;
 }
 
 .fileBox p {
-    font-size: 18px;
+    font-size: 12px;
     color: var(--Neutral-300);
 }
 
@@ -109,7 +112,7 @@
     display: flex;
     align-items: center;
     height: 16px;
-    gap: 8px;
+    gap: 5px;
 }
 
 .infoIcon {
@@ -118,7 +121,7 @@
 }
 
 .infoBox p {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 120%;
     letter-spacing: -0.2px;
     color: var(--Neutral-300);
@@ -130,26 +133,24 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 90px;
+    height: 60px;
 }
-
 
 
 .inputBox label {
     display: block;
-    color: var(--Neutral-300);
 }
 
 
 .inputBox input {
     width: 100%;
-    height: 54px;
-    border-radius: 12px;
+    height: 36px;
+    border-radius: 8px;
     background-color: rgb(255, 255, 255, .08);
     border: 1px solid var(--Neutral-500);
-    padding: 0 16px;
+    padding: 0 11px;
     color: #fff;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 120%;
     letter-spacing: 0;
     caret-color: #fff;
@@ -168,27 +169,28 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: #ffffff;
     transition: background-color 5000s ease-in-out 0s;
-    box-shadow: inset 0 0 20px 20px rgb(255, 255, 255, .1);
+    box-shadow: inset 0 0 13px 13px rgb(255, 255, 255, .1);
+    /* Rescaled */
 }
 
-in .inputBox input:focus {
+.inputBox input:focus {
     outline: 2px solid var(--Neutral-500);
 }
 
 
 form button {
-    height: 54px;
-    border-radius: 12px;
-    padding: 16px 24px;
+    height: 36px;
+    border-radius: 8px;
+    padding: 11px 16px;
     background-color: var(--Orange-500);
-    color: rgb(1, 1, 49);
-    border: 1px solid var(--Neutral-500);
-    font-size: 20px;
+    border: none;
+    color:var(--Neutral-900);
+    font-size: 13px;
     font-weight: 900;
     line-height: 110%;
     letter-spacing: -0.3px;
-}   
+}
 
 form button:hover {
     background-color: var(--Orange-700);
-} 
+}
