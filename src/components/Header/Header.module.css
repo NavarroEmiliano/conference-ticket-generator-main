@@ -11,17 +11,17 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 208px;
-    height: 30px;
-    margin-top: 25px;
+    width: 167px;
+    height: 25px;
+    margin-top: 20.5px;
     gap: 16px;
 }
 
 .headerContent img {
-    height: 30px;
+    height: 25px;
 }
 
 .headerContent h4 {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
 }
