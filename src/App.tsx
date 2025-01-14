@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./components/Form/Form";
 import Header from "./components/Header/Header";
 import Background from "./components/Background/Background";
+import Ticket from "./components/Ticket/Ticket";
 
 export interface User {
   userImg?: File  | null;
@@ -22,7 +23,8 @@ function App() {
     <>
       <Background />
       <Header />
-      <Form user={user} setUser={setUser} />
+      {/* <Form user={user} setUser={setUser} /> */}
+      <Ticket/>
     </>
   );
 }

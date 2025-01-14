@@ -1,0 +1,55 @@
+:root {
+    --Neutral-300: #d1d0d5;
+    --Neutral-500: #8784A5;
+    --Neutral-700: #4B4869;
+    --Neutral-900: #0D082D;
+    --Orange-500: #F57463;
+    --Orange-700: #E1604F;
+
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticketHeader {
+    min-height: 121px;
+    max-width: 596px;
+    margin-bottom: 40px;
+}
+
+.ticketHeader h2 {
+    font: var(--text-preset1);
+    font-size: 40px;
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: 13px;
+}
+
+.name {
+    background: linear-gradient(90deg, #F37362 0%, #FFF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ticketHeader p {
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: var(--Neutral-300);
+    margin: 0 auto;
+    width: 300px;
+}
+
+.ticketHeader p span {
+    color: var(--Orange-700);
+}
