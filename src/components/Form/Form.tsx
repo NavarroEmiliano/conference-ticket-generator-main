@@ -4,6 +4,12 @@ import { ChangeEvent, useState } from "react";
 import { User } from "../../App";
 import InfoIcon from "../Icons/InfoIcon";
 
+interface Error {
+  username: string | null;
+  email: string | null;
+  github: string | null;
+}
+
 const Form = ({
   setUser,
   user,
@@ -11,10 +17,8 @@ const Form = ({
   setUser: React.Dispatch<React.SetStateAction<User>>;
   user: User;
 }) => {
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<Error | null>(null);
   const [imageSrc, setImageSrc] = useState<string | undefined>(undefined);
-
-  console.log(user);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, files, type } = e.target;
@@ -31,11 +35,12 @@ const Form = ({
         [name]: value,
       };
     });
-    if (type === "file" && files) {
+    if (type === "file" && files && files[0].size < 5000) {
       const imageUrl = URL.createObjectURL(files[0]);
-
       setImageSrc(imageUrl);
+      return;
     }
+    setImageSrc(undefined);
   };
 
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
@@ -43,6 +48,16 @@ const Form = ({
     if (!user.fullName) {
       console.log("No papi, estas completamente confundido");
     }
+  };
+
+  const handleRemoveImg = () => {
+    setUser((prev: User) => {
+      return {
+        ...prev,
+        userImg: null,
+      };
+    });
+    setImageSrc(undefined);
   };
 
   return (
@@ -57,21 +72,34 @@ const Form = ({
             Upload Avatar
           </label>
 
-          <div className={styles.fileBox}>
-            <input
-              onChange={handleChange}
-              type="file"
-              name="file"
-              id="file"
-              accept="image/jpg, image/png"
-            />
+          <div
+            className={`${styles.fileBox} ${!imageSrc && styles.fileBoxHover}`}
+          >
+            {!imageSrc && (
+              <input
+                className={styles.uploadImg}
+                onChange={handleChange}
+                type="file"
+                name="file"
+                id="file"
+                accept="image/jpg, image/png"
+              />
+            )}
 
             {user?.userImg && user.userImg.size < 5000 ? (
-              <div className={`${styles.fileImgContainer} ${styles.userImgContainer}`}>
-                <img className={styles.userImg} src={imageSrc} alt="Upload Icon" />
+              <div
+                className={`${styles.fileImgContainer} ${styles.userImgContainer}`}
+              >
+                <img
+                  className={styles.userImg}
+                  src={imageSrc}
+                  alt="Upload Icon"
+                />
               </div>
             ) : (
-              <div className={`${styles.fileImgContainer} ${styles.cloudIconContainer}`}>
+              <div
+                className={`${styles.fileImgContainer} ${styles.cloudIconContainer}`}
+              >
                 <img
                   className={styles.icon}
                   src={uploadIcon}
@@ -79,7 +107,29 @@ const Form = ({
                 />
               </div>
             )}
-            <p>Drag and drop or click to upload</p>
+            {user?.userImg && user.userImg.size < 5000 ? (
+              <div className={styles.fileBtns}>
+                <button
+                  onClick={handleRemoveImg}
+                  className={styles.removeImgBtn}
+                >
+                  Remove image
+                </button>
+                <button className={styles.changeImgBtn}>
+                  Change image
+                  <input
+                    className={styles.changeImg}
+                    onChange={handleChange}
+                    type="file"
+                    name="file"
+                    id="file"
+                    accept="image/jpg, image/png"
+                  />
+                </button>
+              </div>
+            ) : (
+              <p>Drag and drop or click to upload</p>
+            )}
           </div>
           <div className={styles.infoBox}>
             {user?.userImg && user.userImg.size > 5000 ? (
@@ -109,7 +159,12 @@ const Form = ({
             type="text"
             id="username"
             name="username"
+            required
           />
+          <div className={styles.infoBox}>
+            <InfoIcon className={styles.infoIcon} height={16} width={16} />
+            <p>Buenas</p>
+          </div>
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="email">Email Address</label>
@@ -119,7 +174,12 @@ const Form = ({
             id="email"
             name="email"
             placeholder="example@gmail.com"
+            required
           />
+          <div className={styles.infoBox}>
+            <InfoIcon className={styles.infoIcon} height={16} width={16} />
+            <p>Buenas</p>
+          </div>
         </div>
         <div className={styles.inputBox}>
           <label htmlFor="github">GitHub Username</label>
@@ -129,9 +189,16 @@ const Form = ({
             id="github"
             name="github"
             placeholder="@yourusername"
+            required
           />
+          <div className={styles.infoBox}>
+            <InfoIcon className={styles.infoIcon} height={16} width={16} />
+            <p>Buenas</p>
+          </div>
         </div>
-        <button type="submit">Generate My Ticket</button>
+        <button className={styles.submitBtn} type="submit">
+          Generate My Ticket
+        </button>
       </form>
     </div>
   );

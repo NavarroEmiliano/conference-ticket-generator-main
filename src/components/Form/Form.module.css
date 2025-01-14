@@ -46,7 +46,6 @@
     display: flex;
     flex-direction: column;
     width: 308px;
-    height: 408;
     gap: 16px;
 }
 
@@ -77,8 +76,9 @@
     backdrop-filter: blur(4px);
 }
 
-.fileBox:hover {
+.fileBoxHover:hover {
     background-color: rgb(255, 255, 255, 0.2);
+
 }
 
 .fileBox:focus {
@@ -86,12 +86,49 @@
 }
 
 
-.fileBox input {
+.fileBox .uploadImg {
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
     top: 0;
+}
+
+.fileBox .fileBtns {
+    display: flex;
+    height: 24px;
+    font-size:12px ;
+    gap: 4px;
+}
+
+.fileBox .fileBtns button {
+    width: 100px;
+    border-radius: 4px;
+    background-color: #ffffff10;
+    border: none;
+    color: white;
+    height: 22px;
+}
+
+.fileBox .fileBtns button:hover {
+    color: var(--Neutral-300);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+}
+
+
+.fileBox .fileBtns .changeImgBtn {
+    position: relative;
+}
+
+.changeImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .fileImgContainer {
@@ -108,6 +145,12 @@
     width: 32px;
     border-radius: 6px;
     object-fit: cover;
+}
+
+.fileImgContainer .removeImg {
+    position: relative;
+    z-index: 999;
+    background-color: red;
 }
 
  .cloudIconContainer .icon {
@@ -154,7 +197,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 60px;
+    gap: 8px;
 }
 
 
@@ -178,10 +221,13 @@
     backdrop-filter: blur(4px);
 }
 
+.inputBox input:hover {
+    background-color: rgb(255, 255, 255, 0.2);
+}
+
 .inputBox input::placeholder {
     color: var(--Neutral-300);
 }
-
 
 .inputBox input:-webkit-autofill,
 .inputBox input:-webkit-autofill:hover,
@@ -190,16 +236,24 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: #ffffff;
     transition: background-color 5000s ease-in-out 0s;
-    box-shadow: inset 0 0 13px 13px rgb(255, 255, 255, .1);
-    /* Rescaled */
+    box-shadow: inset 0 0 20px 20px rgb(255, 255, 255, .1);
+
 }
 
 .inputBox input:focus {
     outline: 2px solid var(--Neutral-500);
+    outline-offset: 2px;
+}
+
+.inputBox p {
+    font-size: 10px;
 }
 
 
-form button {
+
+
+
+form .submitBtn {
     height: 36px;
     border-radius: 8px;
     padding: 11px 16px;
@@ -212,6 +266,6 @@ form button {
     letter-spacing: -0.3px;
 }
 
-form button:hover {
+form .submitBtn:hover {
     background-color: var(--Orange-700);
 }
