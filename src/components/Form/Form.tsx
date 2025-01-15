@@ -64,7 +64,7 @@ const Form = ({
     setImageSrc(undefined);
   };
 
-  console.log(imageSrc)
+  console.log(imageSrc);
 
   return (
     <div className={styles.container}>
@@ -109,14 +109,19 @@ const Form = ({
                   </button>
                   <button type="button">
                     Change
-                    <input
-                      className={styles["change-input"]}
-                      type="file"
-                      name="file"
-                      id="file"
-                      onChange={handleChange}
-                      accept="image/jpg, image/png"
-                    />
+                    <label
+                      htmlFor="file"
+                      className={styles["change-input-label"]}
+                    >
+                      <input
+                        type="file"
+                        name="file"
+                        id="file"
+                        onChange={handleChange}
+                        accept="image/jpg, image/png"
+                        className={styles["change-input"]}
+                      />
+                    </label>
                   </button>
                 </div>
               )}
