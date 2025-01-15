@@ -229,7 +229,7 @@
     background-color: var(--Orange-700);
 }
 
-@media only screen and (max-width: 768px) {
+@media  (min-width: 376px) and (max-width: 768px) {
     .header {
         width: 600px;
     }
@@ -241,4 +241,20 @@
     .form {
         width: 391px;
     }
+}
+
+@media  (max-width: 375px) {
+    .header {
+        width: 343px;
+    }
+
+    .header h2 {
+        font-size: 30px;
+    }
+
+    .form {
+        width: 320px;
+        margin-top: 0;
+    }
+
 }
