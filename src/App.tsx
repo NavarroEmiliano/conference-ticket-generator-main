@@ -6,7 +6,7 @@ import Background from "./components/Background/Background";
 import Ticket from "./components/Ticket/Ticket";
 
 export interface User {
-  userImg?: File  | null;
+  userImg?: File | null;
   username?: string;
   email?: string;
   github?: string;
@@ -15,16 +15,20 @@ export interface User {
 }
 
 function App() {
-    const [user, setUser] = useState<User>({});
+  const [user, setUser] = useState<User>({});
 
-    console.log(user)
+  const showTicket = user.email && user.github && user.username && user.imgUrl;
+
 
   return (
     <>
       <Background />
       <Header />
-      {/* <Form user={user} setUser={setUser} /> */}
-      <Ticket/>
+      {showTicket ? (
+        <Ticket user={user} />
+      ) : (
+        <Form user={user} setUser={setUser} />
+      )}
     </>
   );
 }
