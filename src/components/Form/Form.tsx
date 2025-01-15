@@ -126,10 +126,12 @@ const Form = ({
                 </div>
               )}
             </div>
-            {errorMessage?.userImg && (
+            {errorMessage?.userImg ? (
               <p className={styles["error-text"]}>
                 <InfoIcon height={15} width={15} /> {errorMessage.userImg}
               </p>
+            ) : (
+              <p className={styles["file-info"]}><InfoIcon height={15} width={15} /> Upload your photo (JPG or PNG, max size: 500KB).</p>
             )}
           </div>
         </div>

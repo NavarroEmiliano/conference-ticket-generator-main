@@ -22,6 +22,5 @@ body {
 @media  (max-width: 375px) {
     body {
         background-image: url('./assets/images/background-mobile.png');
-        overflow-y: scroll;
     }
 }
