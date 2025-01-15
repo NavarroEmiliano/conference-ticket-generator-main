@@ -231,18 +231,14 @@
 
 @media only screen and (max-width: 768px) {
     .header {
-        width: 705px;
-    }
-
-    .header h2 {
-        font-size: 36px;
+        width: 600px;
     }
 
     .header p {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .form {
-        width: 90%;
+        width: 391px;
     }
 }

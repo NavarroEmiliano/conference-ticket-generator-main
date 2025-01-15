@@ -7,11 +7,11 @@ import squigglyButton from "../../assets/images/pattern-squiggly-line-bottom.svg
 const Background = () => {
   return (
     <div className={styles.bgContainer}>
-      <img src={linesSvg} alt="" />
-      <img src={circleSvg} alt="" />
-      <img src={circleSvg} alt="" />
-      <img src={squigglyTop} alt="" />
-      <img src={squigglyButton} alt="" />
+      <img className={styles.linesSvg} src={linesSvg} alt="" />
+      <img className={styles.circleSvgTop} src={circleSvg} alt="" />
+      <img className={styles.circleSvgMiddle} src={circleSvg} alt="" />
+      <img className={styles.squigglyTop} src={squigglyTop} alt="" />
+      <img className={styles.squigglyBottom} src={squigglyButton} alt="" />
     </div>
   );
 };
