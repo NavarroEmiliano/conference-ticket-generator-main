@@ -1,10 +1,9 @@
 import styles from "./Ticket.module.css";
 import logoMark from "../../assets/images/logo-mark.svg";
 
-import userImg from "../../assets/images/image-avatar.jpg";
 import GithubIcon from "../Icons/GithubIcon";
 import { User } from "../../App";
-const Ticket = ({ user }: {user: User}) => {
+const Ticket = ({ user }: { user: User }) => {
   return (
     <div className={styles.container}>
       <div className={styles.ticketHeader}>
@@ -13,8 +12,8 @@ const Ticket = ({ user }: {user: User}) => {
           ticket is ready.
         </h2>
         <p>
-          We've emailed your ticket to <span>{user.email}</span> and will
-          send updates in the run up to the event.
+          We've emailed your ticket to <span>{user.email}</span> and will send
+          updates in the run up to the event.
         </p>
       </div>
       <div className={styles.ticketContainer}>
@@ -33,8 +32,7 @@ const Ticket = ({ user }: {user: User}) => {
                 <p className={styles.userName}>{user.username}</p>
                 <div className={styles.githubContainer}>
                   <GithubIcon className={styles.githubIcon} />
-                  <p className={styles.githubName}>{user.github}
-                  </p>
+                  <p className={styles.githubName}>{user.github}</p>
                 </div>
               </div>
             </div>
