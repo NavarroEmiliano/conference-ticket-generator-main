@@ -23,31 +23,17 @@ const Form = ({
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, files, type } = e.target;
-    setUser((prev: User) => {
-      if (type === "file" && files) {
-        return {
-          ...prev,
-          userImg: files[0],
-        };
-      }
+    setUser((prev: User) => ({
+      ...prev,
+      [name]: type === "file" && files ? files[0] : value,
+    }));
 
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-
-    if (type === "file") {
-      if (files && files[0].size < 5000) {
-        const imageUrl = URL.createObjectURL(files[0]);
-        setImageSrc(imageUrl);
-        setErrorMessage((prev: ErrorMessage | null) => ({
-          ...prev,
-          userImg: '',
-        }));
-        return;
+    if (type === "file" && files) {
+      if (files[0].size < 5000) {
+        setImageSrc(URL.createObjectURL(files[0]));
+        setErrorMessage((prev) => ({ ...prev, userImg: undefined }));
       } else {
-        setErrorMessage((prev: ErrorMessage | null) => ({
+        setErrorMessage((prev) => ({
           ...prev,
           userImg: "File too large. Please upload a photo under 5MB.",
         }));
@@ -58,211 +44,142 @@ const Form = ({
 
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!user.username) {
-      setErrorMessage((prev: ErrorMessage | null) => ({
-        ...prev,
-        username: "This field cannot be empty",
-      }));
-    }
+    const errors: ErrorMessage = {};
 
-    if (!user.email) {
-      setErrorMessage((prev: ErrorMessage | null) => ({
-        ...prev,
-        email: "This field cannot be empty",
-      }));
-    }
+    if (!user.username) errors.username = "This field cannot be empty";
+    if (!user.email) errors.email = "This field cannot be empty";
+    if (!user.github) errors.github = "This field cannot be empty";
+    if (!imageSrc) errors.userImg = "This field cannot be empty";
 
-    if (!user.github) {
-      setErrorMessage((prev: ErrorMessage | null) => ({
-        ...prev,
+    setErrorMessage(errors);
 
-        github: "This field cannot be empty",
-      }));
-    }
-
-    if (!imageSrc) {
-      setErrorMessage((prev: ErrorMessage | null) => ({
-        ...prev,
-        userImg: "This field cannot be empty",
-      }));
-    }
-
-    if(user.email && user.username && user.github && imageSrc) {
-      setErrorMessage(null)
-      setUser((prev:User) => ({
-        ...prev,
-        imgUrl: imageSrc
-      }))
+    if (Object.keys(errors).length === 0) {
+      setUser((prev) => ({ ...prev, imgUrl: imageSrc }));
+      setErrorMessage(null);
     }
   };
 
   const handleRemoveImg = () => {
-    setUser((prev: User) => {
-      return {
-        ...prev,
-        userImg: null,
-      };
-    });
+    setUser((prev) => ({ ...prev, userImg: null }));
     setImageSrc(undefined);
   };
 
+  console.log(imageSrc)
 
   return (
     <div className={styles.container}>
-      <div className={styles.formHeader}>
+      <div className={styles.header}>
         <h2>Your Journey to Coding Conf 2025 Starts Here!</h2>
         <p>Secure your spot at next year's biggest coding conference.</p>
       </div>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.fileContainer}>
-          <label className={styles.fileLabel} htmlFor="file">
-            Upload Avatar
-          </label>
-
+        <div className={styles["file-container"]}>
+          <label htmlFor="file">Upload Avatar</label>
           <div
-            className={`${styles.fileBox} ${!imageSrc && styles.fileBoxHover}`}
+            className={`${styles["file-group"]} ${
+              !imageSrc && styles["file-box-hover"]
+            }`}
           >
-            {!imageSrc && (
-              <input
-                className={styles.uploadImg}
-                onChange={handleChange}
-                type="file"
-                name="file"
-                id="file"
-                accept="image/jpg, image/png"
-              />
-            )}
-
-            {user?.userImg && user.userImg.size < 5000 ? (
-              <div
-                className={`${styles.fileImgContainer} ${styles.userImgContainer}`}
-              >
-                <img
-                  className={styles.userImg}
-                  src={imageSrc}
-                  alt="Upload Icon"
+            <div className={styles["file-box"]}>
+              {!imageSrc && (
+                <input
+                  type="file"
+                  name="file"
+                  id="file"
+                  onChange={handleChange}
+                  accept="image/jpg, image/png"
                 />
-              </div>
-            ) : (
-              <div
-                className={`${styles.fileImgContainer} ${styles.cloudIconContainer}`}
-              >
-                <img
-                  className={styles.icon}
-                  src={uploadIcon}
-                  alt="Upload Icon"
-                />
-              </div>
-            )}
-            {user?.userImg && user.userImg.size < 5000 ? (
-              <div className={styles.fileBtns}>
-                <button
-                  onClick={handleRemoveImg}
-                  className={styles.removeImgBtn}
-                >
-                  Remove image
-                </button>
-                <button className={styles.changeImgBtn}>
-                  Change image
-                  <input
-                    className={styles.changeImg}
-                    onChange={handleChange}
-                    type="file"
-                    name="file"
-                    id="file"
-                    accept="image/jpg, image/png"
-                  />
-                </button>
-              </div>
-            ) : (
-              <p>Drag and drop or click to upload</p>
-            )}
-          </div>
-          <div className={styles.infoBox}>
-            {errorMessage?.userImg || (user?.userImg && user.userImg.size > 5000) ? (
-              <>
-                <InfoIcon
-                  className={styles.infoIconError}
-                  height={16}
-                  width={16}
-                />
-                <p className={styles.errorMessage}>{errorMessage?.userImg}</p>
-              </>
-            ) : (
-              <>
-                <InfoIcon className={styles.infoIcon} height={16} width={16} />
-                <p>Upload your photo (JPG or PNG, max size: 5MB).</p>
-              </>
+              )}
+              {imageSrc ? (
+                <div className={styles["file-preview"]}>
+                  <img src={imageSrc} alt="Uploaded" />
+                </div>
+              ) : (
+                <div className={styles["buenas"]}>
+                  <div className={styles["file-preview"]}>
+                    <img src={uploadIcon} alt="Upload Icon" />
+                  </div>
+                  <p>Drag and drop or click to upload</p>
+                </div>
+              )}
+              {imageSrc && (
+                <div className={styles["file-buttons"]}>
+                  <button type="button" onClick={handleRemoveImg}>
+                    Remove
+                  </button>
+                  <button type="button">
+                    Change
+                    <input
+                      className={styles["change-input"]}
+                      type="file"
+                      name="file"
+                      id="file"
+                      onChange={handleChange}
+                      accept="image/jpg, image/png"
+                    />
+                  </button>
+                </div>
+              )}
+            </div>
+            {errorMessage?.userImg && (
+              <p className={styles["error-text"]}>
+                <InfoIcon height={15} width={15} /> {errorMessage.userImg}
+              </p>
             )}
           </div>
         </div>
 
-        <div className={styles.inputBox}>
+        <div className={styles["input-group"]}>
           <label htmlFor="username">Full Name</label>
           <input
-            onChange={handleChange}
+            className={styles.input}
             type="text"
             id="username"
             name="username"
+            onChange={handleChange}
           />
-          <div className={styles.infoBox}>
-            {errorMessage?.username && (
-              <>
-                <InfoIcon
-                  className={styles.infoIconError}
-                  height={16}
-                  width={16}
-                />
-                <p className={styles.errorMessage}>{errorMessage.username}</p>
-              </>
-            )}
-          </div>
+          {errorMessage?.username && (
+            <p className={styles["error-text"]}>
+              <InfoIcon height={15} width={15} /> {errorMessage.username}
+            </p>
+          )}
         </div>
-        <div className={styles.inputBox}>
+
+        <div className={styles["input-group"]}>
           <label htmlFor="email">Email Address</label>
           <input
-            onChange={handleChange}
+            className={styles.input}
             type="email"
             id="email"
             name="email"
+            onChange={handleChange}
             placeholder="example@gmail.com"
           />
-          <div className={styles.infoBox}>
-            {errorMessage?.email && (
-              <>
-                <InfoIcon
-                  className={styles.infoIconError}
-                  height={16}
-                  width={16}
-                />
-                <p className={styles.errorMessage}>{errorMessage.email}</p>
-              </>
-            )}
-          </div>
+          {errorMessage?.email && (
+            <p className={styles["error-text"]}>
+              <InfoIcon height={15} width={15} /> {errorMessage.email}
+            </p>
+          )}
         </div>
-        <div className={styles.inputBox}>
+
+        <div className={styles["input-group"]}>
           <label htmlFor="github">GitHub Username</label>
           <input
-            onChange={handleChange}
+            className={styles.input}
             type="text"
             id="github"
             name="github"
+            onChange={handleChange}
             placeholder="@yourusername"
           />
-          <div className={styles.infoBox}>
-            {errorMessage?.username && (
-              <>
-                <InfoIcon
-                  className={styles.infoIconError}
-                  height={16}
-                  width={16}
-                />
-                <p className={styles.errorMessage}>{errorMessage.username}</p>
-              </>
-            )}
-          </div>
+          {errorMessage?.github && (
+            <p className={styles["error-text"]}>
+              <InfoIcon height={15} width={15} /> {errorMessage.github}
+            </p>
+          )}
         </div>
-        <button className={styles.submitBtn} type="submit">
+
+        <button className={styles["submit-btn"]} type="submit">
           Generate My Ticket
         </button>
       </form>

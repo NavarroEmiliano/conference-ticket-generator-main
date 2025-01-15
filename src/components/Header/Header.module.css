@@ -19,10 +19,11 @@ header {
 }
 
 .headerContent img {
-    height: 25px;
+    height: 23px;
 }
 
 .headerContent h4 {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 90%;
 }
