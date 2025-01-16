@@ -1,10 +1,10 @@
-//import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
-//import Form from "./components/Form/Form";
+import Form from "./components/Form/Form";
 import Header from "./components/header/Header";
 import Background from "./components/background/Background";
 import FormHeader from "./components/formheader/FormHeader";
-//import Ticket from "./components/Ticket/Ticket";
+import Ticket from "./components/ticket/Ticket";
 
 export interface User {
   userImg?: File | null;
@@ -16,21 +16,21 @@ export interface User {
 }
 
 function App() {
- /*  const [user, setUser] = useState<User>({});
+  const [user, setUser] = useState<User>({});
 
   const showTicket = user.email && user.github && user.username && user.imgUrl;
- */
+
 
   return (
     <>
       <Background />
        <Header /> 
        <FormHeader/>
-{/*       {showTicket ? (
+       {showTicket ? (
         <Ticket user={user} />
       ) : (
         <Form user={user} setUser={setUser} />
-      )} */}
+      )} 
     </>
   );
 }

@@ -67,8 +67,8 @@ const Form = ({
   console.log(imageSrc);
 
   return (
-    <div className={styles.container}>
-      <form onSubmit={handleSubmit} className={styles.form}>
+    <div className={styles["container"]}>
+      <form onSubmit={handleSubmit} className={styles["form"]}>
         <div className={styles["file-container"]}>
           <label htmlFor="file">Upload Avatar</label>
           <div
