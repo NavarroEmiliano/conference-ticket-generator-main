@@ -29,7 +29,8 @@ const Form = ({
     }));
 
     if (type === "file" && files) {
-      if (files[0].size < 5000) {
+
+      if (files[0].size < 5120) {
         setImageSrc(URL.createObjectURL(files[0]));
         setErrorMessage((prev) => ({ ...prev, userImg: undefined }));
       } else {
@@ -63,8 +64,6 @@ const Form = ({
     setUser((prev) => ({ ...prev, userImg: null }));
     setImageSrc(undefined);
   };
-
-  console.log(imageSrc);
 
   return (
     <div className={styles["container"]}>
@@ -127,7 +126,10 @@ const Form = ({
                 <InfoIcon height={15} width={15} /> {errorMessage.userImg}
               </p>
             ) : (
-              <p className={styles["file-info"]}><InfoIcon height={15} width={15} /> Upload your photo (JPG or PNG, max size: 500KB).</p>
+              <p className={styles["file-info"]}>
+                <InfoIcon height={15} width={15} /> Upload your photo (JPG or
+                PNG, max size: 5MB).
+              </p>
             )}
           </div>
         </div>
