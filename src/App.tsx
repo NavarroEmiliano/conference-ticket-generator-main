@@ -5,6 +5,7 @@ import Header from "./components/Header/Header.tsx";
 import Ticket from "./components/Ticket/Ticket.tsx";
 import Form from "./components/Form/Form.tsx";
 import Formtitle from "./components/Formtitle/Formtitle.tsx";
+import TicketTitle from "./components/Tickettitle/TicketTitle.tsx";
 
 export interface User {
   userImg?: File | null;
@@ -26,7 +27,7 @@ function App() {
       <Header />
 
       <main className="main-container">
-        <Formtitle />
+        {showTicket ? <TicketTitle user={user} /> : <Formtitle />}
         {showTicket ? (
           <Ticket user={user} />
         ) : (

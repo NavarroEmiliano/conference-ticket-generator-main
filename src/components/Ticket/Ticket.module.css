@@ -5,65 +5,29 @@
     --Neutral-900: #0D082D;
     --Orange-500: #F57463;
     --Orange-700: #E1604F;
-
 }
 
 .container {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 90%;
 }
 
-.ticketHeader {
-    min-height: 121px;
-    max-width: 750px;
-    margin-bottom: 40px;
-}
 
-.ticketHeader h2 {
-    font: var(--text-preset1);
-    font-size: 50px;
-    text-align: center;
-    font-weight: 900;
-    margin-bottom: 13px;
-}
-
-.name {
-    background: linear-gradient(90deg, #F37362 0%, #FFF 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.ticketHeader p {
-    font-size: 20px;
-    line-height: 120%;
-    letter-spacing: -0.5px;
-    text-align: center;
-    color: var(--Neutral-300);
-    margin: 0 auto;
-    width: 400px;
-}
-
-.ticketHeader p span {
-    color: var(--Orange-700);
-}
-
-.ticketContainer {
+ .ticket-container {
     background-image: url('../../assets/images/pattern-ticket.svg');
-    width: 600px;
-    height: 280px;
-    background-size: cover;
+    width: 300px;
+    height: 140px;
+    background-size: contain;
     background-position: center;
+    object-fit: scale-down;
+    background-repeat: no-repeat;
     position: relative;
 }
 
-.ticketContainer .content {
+.ticket-content {
     position: absolute; 
     height: 100%;
     width: 100%;
@@ -72,88 +36,92 @@
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
-    padding: 24px;
+    padding: 12px;
 }
 
-.userInformation {
+.event-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
 
-.userInformation .eventInfo {
+
+.event-content .logo-box {
+    display: flex;
+    height: 100%;
+}
+
+
+.event-info {
     display: flex;
     align-items: start;
-    gap: 16px;
-}
-.userInformation .eventInfo img {
-    margin-top: 4px;
-}
-
-.userInformation .eventInfo div {
-    display: flex;
-    flex-direction: column;
     gap: 8px;
+}
 
+.event-info img {
+    width: 24px;
+    height: 24px;
 }
 
 
-.userInformation .eventInfo img {
-    width: 40px;
-}
-
-.userInformation .eventInfo .title {
-    font-size: 40px;
-    line-height: 110%;
+.event-info .title {
     font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 4px;
 }
 
-.userInformation .eventInfo .eventDate {
-    font-size: 18px;
-    line-height: 120%;
-    font-weight: 300;
+.event-info .event-date {
+    font-size: 16px;
+    word-spacing: -4px;
+    font-weight: 100;
     color: var(--Neutral-300);
 }
 
-.userInformation .userInfoContainer {
+
+.user-info-container {
     display: flex;
-    gap: 16px;
+    gap: 8px;
 }
 
-.userInformation .userInfoContainer .nameBox {
+.user-info-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.user-info-container .name-box {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.userInformation .userInfoContainer .userName {
-    font-size: 30px;
+.user-info-container .username {
     line-height: 110%;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.userInformation .userInfoContainer img {
-    height: 80px;
-    border-radius: 12px;
-}
 
-.userInformation .githubContainer {
+.github-icon-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
-.ticketNumber {
-    width: 75px;
+.github-icon-container .github-name {
+    color: var(--Neutral-300);
+}
+
+.ticket-number {
+    width: 20px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.ticketNumber p {
+.ticket-number p {
     transform: rotateZ(90deg);
-    font-size: 30px;
+    font-size: 20px;
     color: var(--Neutral-500);
 }

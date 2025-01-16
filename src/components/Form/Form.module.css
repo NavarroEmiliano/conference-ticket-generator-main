@@ -17,14 +17,14 @@
 .form {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: 300px;
     gap: 30px;
 }
 
 .file-container {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 4px;
 }
 
 .file-container>label {
@@ -36,7 +36,7 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    gap: 9px;
+    gap: 4px;
 }
 
 .input-group label,
@@ -46,7 +46,7 @@
 
 .input {
     width: 100%;
-    height: 54px;
+    height: 30px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--Neutral-500);
@@ -96,7 +96,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 86px;
+    height: 68px;
     padding: 11px 8px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.08);
@@ -205,12 +205,12 @@
 
 
 .submit-btn {
-    height: 54px;
+    height: 30px;
     border-radius: 8px;
     background-color: var(--Orange-500);
     border: none;
     color: var(--Neutral-900);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 900;
     cursor: pointer;
 }
