@@ -2,10 +2,8 @@
     --Neutral-300: #d1d0d5;
 }
 
-
 .container {
     width: 100%;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -13,17 +11,19 @@
 }
 
 .content {
-    width: 90%;
-    border: 1px solid blue;
+    width: 80%;
 }
 
 .content h2 {
     line-height: 110%;
-    padding-bottom: 6px;
+    letter-spacing: -1px;
+    font-size: 30px;
+    padding-bottom: 16px;
 }
 
 .content p {
     font-weight: 400;
+    font-size: 20px;
     color: var(--Neutral-300);
     line-height: 120%;
     letter-spacing: -0.5px;

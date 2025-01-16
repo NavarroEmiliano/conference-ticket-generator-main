@@ -24,12 +24,15 @@ function App() {
     <>
       <Background />
       <Header />
-      <Formtitle/>
-      {showTicket ? (
-        <Ticket user={user} />
-      ) : (
-        <Form user={user} setUser={setUser} />
-      )}
+
+      <main className="main-container">
+        <Formtitle />
+        {showTicket ? (
+          <Ticket user={user} />
+        ) : (
+          <Form user={user} setUser={setUser} />
+        )}
+      </main>
     </>
   );
 }
