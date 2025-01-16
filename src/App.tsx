@@ -1,8 +1,9 @@
 //import { useState } from "react";
 import "./App.css";
 //import Form from "./components/Form/Form";
-import Header from "./components/Header/Header";
-import Background from "./components/Background/Background";
+import Header from "./components/header/Header";
+import Background from "./components/background/Background";
+import FormHeader from "./components/formheader/FormHeader";
 //import Ticket from "./components/Ticket/Ticket";
 
 export interface User {
@@ -24,6 +25,7 @@ function App() {
     <>
       <Background />
        <Header /> 
+       <FormHeader/>
 {/*       {showTicket ? (
         <Ticket user={user} />
       ) : (

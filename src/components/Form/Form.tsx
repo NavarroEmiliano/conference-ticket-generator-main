@@ -2,7 +2,7 @@ import styles from "./Form.module.css";
 import uploadIcon from "../../assets/images/icon-upload.svg";
 import { ChangeEvent, useState } from "react";
 import { User } from "../../App";
-import InfoIcon from "../Icons/InfoIcon";
+import InfoIcon from "../icons/InfoIcon";
 
 interface ErrorMessage {
   username?: string;
@@ -68,10 +68,6 @@ const Form = ({
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h2>Your Journey to Coding Conf 2025 Starts Here!</h2>
-        <p>Secure your spot at next year's biggest coding conference.</p>
-      </div>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles["file-container"]}>
           <label htmlFor="file">Upload Avatar</label>

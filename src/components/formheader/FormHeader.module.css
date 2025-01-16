@@ -1,0 +1,34 @@
+:root {
+    --Neutral-300: #d1d0d5;
+    --Neutral-500: #8784A5;
+    --Neutral-700: #4B4869;
+    --Neutral-900: #0D082D;
+    --Orange-500: #F57463;
+}
+
+
+.container {
+    width: 100%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.content {
+    width: 90%;
+    border: 1px solid blue;
+}
+
+.content h2 {
+    line-height: 110%;
+    padding-bottom: 18px;
+}
+
+.content p {
+    font-weight: 400;
+    color: var(--Neutral-300);
+    line-height: 120%;
+    letter-spacing: -0.5px;
+}
