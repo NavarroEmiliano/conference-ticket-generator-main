@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import Form from "./components/Form/Form";
-import Header from "./components/header/Header";
 import Background from "./components/background/Background";
+import Header from "./components/header/Header";
 import FormHeader from "./components/formheader/FormHeader";
 import Ticket from "./components/ticket/Ticket";
+import Form from "./components/form/Form";
+
 
 export interface User {
   userImg?: File | null;
@@ -20,17 +21,16 @@ function App() {
 
   const showTicket = user.email && user.github && user.username && user.imgUrl;
 
-
   return (
     <>
       <Background />
-       <Header /> 
-       <FormHeader/>
-       {showTicket ? (
+      <Header />
+      <FormHeader />
+      {showTicket ? (
         <Ticket user={user} />
       ) : (
         <Form user={user} setUser={setUser} />
-      )} 
+      )}
     </>
   );
 }
