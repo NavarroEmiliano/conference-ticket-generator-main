@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import Background from "./components/background/Background.tsx";
-import Header from "./components/header/Header.tsx";
-import FormHeader from "./components/formheader/FormHeader.tsx";
-import Ticket from "./components/ticket/Ticket.tsx";
-import Form from "./components/form/Form.tsx";
+import Background from "./components/Background/Background.tsx";
+import Header from "./components/Header/Header.tsx";
+import FormHeader from "./components/Formheader/FormHeader.tsx";
+import Ticket from "./components/Ticket/Ticket.tsx";
+import Form from "./components/Form/Form.tsx";
 
 
 export interface User {

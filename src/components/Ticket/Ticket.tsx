@@ -1,8 +1,8 @@
 import styles from "./Ticket.module.css";
 import logoMark from "../../assets/images/logo-mark.svg";
 
-import GithubIcon from "../icons/GithubIcon.tsx";
-import { User } from "../../App";
+import GithubIcon from "../Icons/GithubIcon.tsx";
+import { User } from "../../App.tsx";
 const Ticket = ({ user }: { user: User }) => {
   return (
     <div className={styles.container}>
