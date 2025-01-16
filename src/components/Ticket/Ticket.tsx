@@ -1,7 +1,7 @@
 import styles from "./Ticket.module.css";
 import logoMark from "../../assets/images/logo-mark.svg";
 
-import GithubIcon from "../icons/GithubIcon";
+import GithubIcon from "../icons/GithubIcon.tsx";
 import { User } from "../../App";
 const Ticket = ({ user }: { user: User }) => {
   return (

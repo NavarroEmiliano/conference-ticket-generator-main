@@ -1,8 +1,8 @@
 import styles from "./Form.module.css";
 import uploadIcon from "../../assets/images/icon-upload.svg";
 import { ChangeEvent, useState } from "react";
-import { User } from "../../App";
-import InfoIcon from "../icons/InfoIcon";
+import { User } from "../../App.tsx";
+import InfoIcon from "../icons/InfoIcon.tsx";
 
 interface ErrorMessage {
   username?: string;
