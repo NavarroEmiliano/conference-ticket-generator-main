@@ -30,7 +30,7 @@ const Form = ({
 
     if (type === "file" && files) {
 
-      if (files[0].size < 5120) {
+      if (files[0].size < 5242880) {
         setImageSrc(URL.createObjectURL(files[0]));
         setErrorMessage((prev) => ({ ...prev, userImg: undefined }));
       } else {
