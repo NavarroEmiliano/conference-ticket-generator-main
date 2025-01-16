@@ -1,6 +1,6 @@
-import styles from "./FormHeader.module.css";
+import styles from "./Formtitle.module.css";
 
-const FormHeader = () => {
+const Formtitle = () => {
   return (
     <div className={styles["container"]}>
       <div className={styles["content"]}>
@@ -11,4 +11,4 @@ const FormHeader = () => {
   );
 };
 
-export default FormHeader;
+export default Formtitle;

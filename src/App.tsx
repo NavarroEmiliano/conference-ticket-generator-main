@@ -4,7 +4,7 @@ import Background from "./components/Background/Background.tsx";
 import Header from "./components/Header/Header.tsx";
 import Ticket from "./components/Ticket/Ticket.tsx";
 import Form from "./components/Form/Form.tsx";
-import FormHeader from "./components/FormHeader/FormHeader.tsx";
+import Formtitle from "./components/Formtitle/Formtitle.tsx";
 
 export interface User {
   userImg?: File | null;
@@ -24,7 +24,7 @@ function App() {
     <>
       <Background />
       <Header />
-      <FormHeader />
+      <Formtitle/>
       {showTicket ? (
         <Ticket user={user} />
       ) : (
