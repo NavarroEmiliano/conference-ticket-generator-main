@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../../assets//images/background-mobile.png");
+    background-image: url("../../assets/images/background-mobile.png");
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -46,27 +46,15 @@
 }
 
 
-@media only screen and (max-width: 768px) {
-    .circleSvgTop {
-        width: 162px;
-        height: 162px;
-        top: -80px;
-    }
 
-    .circleSvgMiddle {
-        width: 162px;
-        height: 162px;
-        right: -80px;
-        overflow: hidden;
+@media (min-width: 768px) {
+    .background-container {
+        background-image: url('../../assets/images/background-tablet.png');
     }
+}
 
-    .squigglyTop {
-        width: 174px;
+@media (min-width: 1280px) {
+    .background-container {
+        background-image: url('../../assets/images/background-desktop.png');
     }
-
-    .squigglyBottom {
-        width: 300px;
-    }
-
-    
 }

@@ -1,28 +1,11 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Inconsolata', sans-serif;
 }
 
 body {
-    background-image: url('./assets/images/background-mobile.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     color: #fff;
-    overflow: hidden;
 }
 
-
-@media  (min-width: 376px) and (max-width: 768px) {
-    body {
-        background-image: url('./assets/images/background-tablet.png');
-    }
-}
-
-@media  (max-width: 375px) {
-    body {
-        background-image: url('./assets/images/background-mobile.png');
-    }
-}
