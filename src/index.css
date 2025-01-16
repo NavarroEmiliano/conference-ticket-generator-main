@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("./assets/images/background-desktop.png");
+    background-image: url('./assets/images/background-mobile.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -6,12 +6,12 @@ import squigglyButton from "../../assets/images/pattern-squiggly-line-bottom.svg
 
 const Background = () => {
   return (
-    <div className={styles.bgContainer}>
-      <img className={styles.linesSvg} src={linesSvg} alt="" />
-      <img className={styles.circleSvgTop} src={circleSvg} alt="" />
-      <img className={styles.circleSvgMiddle} src={circleSvg} alt="" />
-      <img className={styles.squigglyTop} src={squigglyTop} alt="" />
-      <img className={styles.squigglyBottom} src={squigglyButton} alt="" />
+    <div className={styles["background-container"]}>
+      <img className={styles['lines-svg']} src={linesSvg} alt="lineas" />
+      <img className={styles["circle-svg-top"]} src={circleSvg} alt="" />
+      <img className={styles["circle-svg-middle"]} src={circleSvg} alt="" />
+      <img className={styles["squiggly-top"]} src={squigglyTop} alt="" />
+      <img className={styles["squiggly-bottom"]} src={squigglyButton} alt="" />
     </div>
   );
 };

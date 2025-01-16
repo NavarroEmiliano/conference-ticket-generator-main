@@ -23,12 +23,12 @@ function App() {
   return (
     <>
       <Background />
-      <Header />
-      {showTicket ? (
+{/*       <Header /> */}
+{/*       {showTicket ? (
         <Ticket user={user} />
       ) : (
         <Form user={user} setUser={setUser} />
-      )}
+      )} */}
     </>
   );
 }
