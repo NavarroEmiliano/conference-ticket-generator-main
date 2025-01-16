@@ -218,3 +218,8 @@
 .submit-btn:hover {
     background-color: var(--Orange-700);
 }
+
+
+@media (min-width: 480px) {
+    
+}
