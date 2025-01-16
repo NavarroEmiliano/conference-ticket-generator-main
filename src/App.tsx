@@ -1,7 +1,7 @@
 //import { useState } from "react";
 import "./App.css";
 //import Form from "./components/Form/Form";
-//import Header from "./components/Header/Header";
+import Header from "./components/Header/Header";
 import Background from "./components/Background/Background";
 //import Ticket from "./components/Ticket/Ticket";
 
@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <Background />
-{/*       <Header /> */}
+       <Header /> 
 {/*       {showTicket ? (
         <Ticket user={user} />
       ) : (
