@@ -6,9 +6,8 @@
     padding: 16px 0;
 }
 
-/* @media (min-width: 480px) {
+ @media (min-width: 320px) {
     .main-container {
-        gap: 100px;
+        gap: 200px;
     }
 }
- */

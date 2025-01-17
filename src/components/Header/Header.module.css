@@ -16,3 +16,17 @@
     font-size: 16px;
     letter-spacing: 0.5px;
 }
+
+@media (min-width: 320px) {
+    .header-container {
+        padding: 20px;
+    }
+
+    .header-container img {
+        height: 34px;
+    }
+
+    .header-container h4 {
+        font-size: 24px;
+    }
+}
