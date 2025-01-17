@@ -3,6 +3,7 @@ import uploadIcon from "../../assets/images/icon-upload.svg";
 import { ChangeEvent, useState } from "react";
 import { User } from "../../App.tsx";
 import InfoIcon from "../Icons/InfoIcon.tsx";
+import { validateForm } from "../../utils/validations.ts";
 
 interface ErrorMessage {
   username?: string;
@@ -45,12 +46,8 @@ const Form = ({
 
   const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const errors: ErrorMessage = {};
 
-    if (!user.username) errors.username = "This field cannot be empty";
-    if (!user.email) errors.email = "This field cannot be empty";
-    if (!user.github) errors.github = "This field cannot be empty";
-    if (!imageSrc) errors.userImg = "This field cannot be empty";
+    const errors = validateForm(user, imageSrc);
 
     setErrorMessage(errors);
 
@@ -59,6 +56,7 @@ const Form = ({
       setErrorMessage(null);
     }
   };
+  
 
   const handleRemoveImg = () => {
     setUser((prev) => ({ ...prev, userImg: null }));
