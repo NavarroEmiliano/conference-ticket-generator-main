@@ -19,37 +19,46 @@
 
 .circle-svg-top {
     position: absolute;
-    width: 100px;
-    top: -20px;
-    left: -20px;
+    width: 30%;
+    top: -5%;
+    max-width: 300px;
 }
 
 .circle-svg-middle {
     position: absolute;
-    width: 100px;
+    width: 30%;
     top: 50%;
     right: -50px;
+    max-width: 300px;
 }
 
 .squiggly-top {
     position: absolute;
-    width: 150px;
-    top: 30px;
+    width: 30%;
+    top: 5%;
     right: 0;
 }
 
 .squiggly-bottom {
     position: absolute;
-    width: 130px;
+    width: 50%;
     bottom: 0;
     left: 0;
 }
 
 
-
 @media (min-width: 768px) {
     .background-container {
         background-image: url('../../assets/images/background-tablet.png');
+    }
+
+    .circle-svg-top {
+        top: -10%;
+    }
+
+    .circle-svg-middle {
+        right: 5%;
+    
     }
 }
 

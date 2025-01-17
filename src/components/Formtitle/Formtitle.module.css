@@ -48,3 +48,13 @@
 
     }
 }
+
+
+@media (min-width: 768px) {
+    .container h2 {
+        font-size:60px;
+        padding-bottom: 12px;
+
+    }
+
+}

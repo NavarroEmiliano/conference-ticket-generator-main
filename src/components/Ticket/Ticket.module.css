@@ -16,7 +16,7 @@
 }
 
 
- .ticket-container {
+.ticket-container {
     background-image: url('../../assets/images/pattern-ticket.svg');
     width: 300px;
     height: 140px;
@@ -28,12 +28,9 @@
 }
 
 .ticket-content {
-    position: absolute; 
+    position: absolute;
     height: 100%;
     width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
     padding: 12px;
@@ -108,8 +105,10 @@
     gap: 4px;
 }
 
-.github-icon-container .github-name {
-    color: var(--Neutral-300);
+.github-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--Neutral-300);
 }
 
 .ticket-number {
@@ -124,4 +123,86 @@
     transform: rotateZ(90deg);
     font-size: 20px;
     color: var(--Neutral-500);
+}
+
+@media (min-width: 376px) {
+    .container {
+        align-items: start;
+    }
+
+    .ticket-container {
+        width: 370px;
+        height: 174px;
+    }
+
+    .ticket-content {
+        padding: 20px;
+    }
+
+    .ticket-number {
+        width: 20px;
+        height: 100%;
+        }
+
+    .ticket-number p {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ticket-container {
+        width: 600px;
+        height: 280px;
+    }
+
+    .ticket-content {
+        padding: 32px;
+    }
+
+    .event-info {
+        gap: 18px
+    }
+
+    .event-info img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .event-info .title {
+        font-size: 42px;
+        margin-bottom: 12px;
+    }
+
+    .event-info .event-date {
+        font-size: 24px;
+    }
+
+    .user-info-container {
+        display: flex;
+        gap: 16px;
+    }
+
+    .user-info-container img {
+        width: 90px;
+        height: 90px;
+        border-radius: 8px;
+    }
+
+    .github-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .user-info-container .username {
+        font-size: 30px;
+    }
+
+    .user-info-container .github-name {
+        font-size: 20px
+    }
+
+    .ticket-number p {
+        font-size: 32px;
+    }
+
 }

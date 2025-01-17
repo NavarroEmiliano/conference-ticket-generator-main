@@ -23,7 +23,7 @@ const Ticket = ({ user }: { user: User }) => {
               <div className={styles["name-box"]}>
                 <p className={styles["username"]}>{user.username}</p>
                 <div className={styles["github-icon-container"]}>
-                  <GithubIcon className={styles["github-icon"]} />
+                  <GithubIcon className={styles["github-icon"]}/>
                   <p className={styles["github-name"]}>{user.github}</p>
                 </div>
               </div>
