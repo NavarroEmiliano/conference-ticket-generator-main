@@ -6,4 +6,9 @@
     padding: 16px 0;
 }
 
-@media (min-width: 320px) {}
+@media (min-width: 320px) {
+    .main-container {
+        justify-content: start;
+        gap: 50px;
+    }
+}
