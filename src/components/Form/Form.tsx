@@ -90,7 +90,7 @@ const Form = ({
                   <img src={imageSrc} alt="Uploaded" />
                 </div>
               ) : (
-                <div className={styles["buenas"]}>
+                <div className={styles["file-preview-container"]}>
                   <div className={styles["file-preview"]}>
                     <img src={uploadIcon} alt="Upload Icon" />
                   </div>

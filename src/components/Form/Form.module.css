@@ -109,7 +109,6 @@
 .file-box-hover:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-
 }
 
 .file-box input[type="file"] {
@@ -121,7 +120,7 @@
     cursor: pointer;
 }
 
-.buenas {
+.file-preview-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,7 +128,7 @@
     gap: 12px;
 }
 
-.buenas p {
+.file-preview-container p {
     font-size: 12px;
     color: var(--Neutral-300);
 }
@@ -146,6 +145,7 @@
 
 .file-preview img {
     width: 32px;
+    height: 32px;
     border-radius: 6px;
     object-fit: cover;
 }
@@ -202,8 +202,6 @@
     gap: 5px;
 }
 
-
-
 .submit-btn {
     height: 30px;
     border-radius: 8px;
@@ -220,6 +218,26 @@
 }
 
 
-@media (min-width: 480px) {
-    
+@media (min-width: 320px) {
+    .input {
+        height: 44px;
+    }
+
+    .file-box {
+        height: 90px;
+    }
+
+    .file-preview {
+        width: 40px;
+        height: 40px;
+    }
+
+    .file-preview img {
+        height: 38px;
+        width: 38px;
+    }
+
+    .submit-btn {
+        height: 44px;
+    }
 }

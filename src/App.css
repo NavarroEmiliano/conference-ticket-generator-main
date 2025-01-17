@@ -6,8 +6,4 @@
     padding: 16px 0;
 }
 
- @media (min-width: 320px) {
-    .main-container {
-        gap: 200px;
-    }
-}
+@media (min-width: 320px) {}

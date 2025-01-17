@@ -39,3 +39,15 @@
 .email {
     color: var(--Orange-700);
 }
+
+@media (min-width: 320px) {
+    .container h2 {
+        font-size: 30px;
+        padding-bottom: 12px;
+
+    }
+
+    .content p {
+        font-size: 20px;
+    }
+}
