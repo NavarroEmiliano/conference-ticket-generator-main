@@ -28,7 +28,7 @@
     letter-spacing: -0.5px;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 376px) {
     .container h2 {
         font-size: 30px;
         padding-bottom: 12px;
@@ -37,5 +37,14 @@
 
     .content p {
         font-size: 20px;
+    }
+}
+
+
+@media (min-width: 480px) {
+    .container h2 {
+        font-size: 40px;
+        padding-bottom: 12px;
+
     }
 }

@@ -17,11 +17,7 @@
     letter-spacing: 0.5px;
 }
 
-@media (min-width: 320px) {
-    .header-container {
-        padding: 30px;
-    }
-
+@media (min-width: 376px) {
     .header-container img {
         height: 34px;
     }

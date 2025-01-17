@@ -218,7 +218,36 @@
 }
 
 
-@media (min-width: 320px) {
+@media (min-width: 374px) {
+    .input {
+        height: 44px;
+    }
+
+    .file-box {
+        height: 90px;
+    }
+
+    .file-preview {
+        width: 40px;
+        height: 40px;
+    }
+
+    .file-preview img {
+        height: 38px;
+        width: 38px;
+    }
+
+    .submit-btn {
+        height: 44px;
+    }
+}
+
+
+@media (min-width: 480px) {
+    .form {
+        width: 380px;
+    }
+
     .input {
         height: 44px;
     }

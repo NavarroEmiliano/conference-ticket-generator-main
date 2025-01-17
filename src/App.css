@@ -1,14 +1,13 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: calc(100vh - 40px);
+    justify-content: center;
+    height: calc(100vh - 54px);
     padding: 16px 0;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 376px) {
     .main-container {
-        justify-content: start;
-        gap: 50px;
+        gap: 60px;
     }
 }
